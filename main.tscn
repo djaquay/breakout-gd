@@ -1,20 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm2kk61rym6vu"]
+[gd_scene load_steps=7 format=3 uid="uid://cm2kk61rym6vu"]
 
 [ext_resource type="PackedScene" uid="uid://babsf8xnolrjs" path="res://wall.tscn" id="1_kjrpd"]
+[ext_resource type="Script" path="res://main.gd" id="1_vrvtn"]
 [ext_resource type="PackedScene" uid="uid://bnw6t7djmhwgu" path="res://player.tscn" id="2_4s2sv"]
 [ext_resource type="PackedScene" uid="uid://dfp24w687e7b6" path="res://ball.tscn" id="3_1a1x5"]
 [ext_resource type="PackedScene" uid="uid://b4iu8v6bvtn6h" path="res://hud.tscn" id="4_36rlk"]
+[ext_resource type="PackedScene" uid="uid://bvjt14pqidyl0" path="res://brick.tscn" id="5_hoy5r"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_vrvtn")
+brick = ExtResource("5_hoy5r")
 
 [node name="TopWall" parent="." instance=ExtResource("1_kjrpd")]
+position = Vector2(0, 80)
+scale = Vector2(28.82, 0.5)
 
 [node name="LeftWall" parent="." instance=ExtResource("1_kjrpd")]
+position = Vector2(0, 100)
+scale = Vector2(0.5, 13.68)
 
 [node name="RightWall" parent="." instance=ExtResource("1_kjrpd")]
+position = Vector2(1132.23, 100)
+scale = Vector2(0.5, 13.68)
 
 [node name="Player" parent="." instance=ExtResource("2_4s2sv")]
+position = Vector2(504, 614)
 
 [node name="Ball" parent="." instance=ExtResource("3_1a1x5")]
+position = Vector2(562, 591)
 
 [node name="HUD" parent="." instance=ExtResource("4_36rlk")]

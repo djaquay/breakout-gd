@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://b4iu8v6bvtn6h"]
+[gd_scene load_steps=2 format=3 uid="uid://b4iu8v6bvtn6h"]
+
+[ext_resource type="FontFile" uid="uid://de3d08wcbky7x" path="res://Xolonium-Regular.ttf" id="1_ht6fj"]
 
 [node name="HUD" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 189.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("1_ht6fj")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 2
