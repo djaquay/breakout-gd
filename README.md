@@ -4,7 +4,7 @@ Part of the 20-Game Challenge
 
 # Up Next/The Plan
 
-brick setup, addition
+push repo to gh
 
 player movement (mouse-driven, x-axis)
 ball movement
@@ -28,3 +28,4 @@ better player control
 basic scene structure
 basic visual scene elements (walls, HUD, player, ball, bricks)
 mechanical scene elements (collision rects, etc.)
+brick setup, addition

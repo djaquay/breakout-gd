@@ -9,7 +9,10 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_vrvtn")
-brick = ExtResource("5_hoy5r")
+brick_scene = ExtResource("5_hoy5r")
+
+[node name="Brick" parent="." instance=ExtResource("5_hoy5r")]
+visible = false
 
 [node name="TopWall" parent="." instance=ExtResource("1_kjrpd")]
 position = Vector2(0, 80)
