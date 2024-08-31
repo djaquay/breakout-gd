@@ -10,6 +10,7 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_vrvtn")
 brick_scene = ExtResource("5_hoy5r")
+ball_scene = ExtResource("3_1a1x5")
 
 [node name="Brick" parent="." instance=ExtResource("5_hoy5r")]
 visible = false
@@ -28,8 +29,5 @@ scale = Vector2(0.5, 13.68)
 
 [node name="Player" parent="." instance=ExtResource("2_4s2sv")]
 position = Vector2(504, 614)
-
-[node name="Ball" parent="." instance=ExtResource("3_1a1x5")]
-position = Vector2(562, 591)
 
 [node name="HUD" parent="." instance=ExtResource("4_36rlk")]

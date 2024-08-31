@@ -1,13 +1,16 @@
 extends Node
 
 @export var brick_scene: PackedScene
+@export var ball_scene: PackedScene
 var min_x
 var max_x
+var screen_width
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	brick_setup()
+	screen_width = $Player.get_viewport_rect().size.x
 	
 	var wallSize = $LeftWall/CollisionShape2D.shape.get_rect().size
 	var playerSize = $Player/CollisionShape2D.shape.get_rect().size
@@ -31,5 +34,20 @@ func _input(event):
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(_delta: float) -> void:
+	if Input.is_action_just_released("serve_ball"):
+		serve_ball()
+
+func serve_ball() -> void:
+	var ball = ball_scene.instantiate()
+	
+	# player.get_node("Area2d/CollisionShape2D").shape.radius
+	var ballNode = ball.get_node("CollisionShape2D")
+	var ballSize = ballNode.shape.get_rect().size
+	var ballX = screen_width / 2 - ballSize.x / 2
+	var ballY = $Player.position.y - ballSize.y - 5
+	ball.position = Vector2(ballX, ballY)
+	
+	ball.hud = $HUD
+	
+	add_child(ball)
