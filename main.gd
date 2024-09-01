@@ -52,6 +52,13 @@ func serve_ball() -> void:
 	var ballY = $Player.position.y - ballSize.y - 5
 	ball.position = Vector2(ballX, ballY)
 	
+	ball.left_right = 1 if randi_range(0, 1) > 0 else -1
+	ball.up_down = -1  # always starts moving up
+	
 	ball.hud = $HUD
+	
+	# test seam hit
+	# ball.position = Vector2(500, 340)
+	# ball.left_right = 1
 	
 	add_child(ball)
