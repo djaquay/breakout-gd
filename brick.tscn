@@ -3,7 +3,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6soq"]
 size = Vector2(130, 18)
 
-[node name="Brick" type="Area2D"]
+[node name="Brick" type="Area2D" groups=["bricks"]]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 130.0

@@ -4,12 +4,9 @@ Part of the 20-Game Challenge
 
 ## Up Next/The Plan
 
-* wall collision
 
 In the queue
 
-* brick collision
-* brick removal
 * scorekeeping
 * speed increase
 * start/end of game logic, display
@@ -31,3 +28,6 @@ In the queue
 * push repo to gh
 * player movement (mouse-driven, x-axis)
 * ball service/movement
+* wall collision
+* brick collision
+* brick removal
