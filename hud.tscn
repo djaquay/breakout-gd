@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4iu8v6bvtn6h"]
+[gd_scene load_steps=3 format=3 uid="uid://b4iu8v6bvtn6h"]
 
+[ext_resource type="Script" path="res://hud.gd" id="1_0lwd1"]
 [ext_resource type="FontFile" uid="uid://de3d08wcbky7x" path="res://Xolonium-Regular.ttf" id="1_ht6fj"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_0lwd1")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 20.0

@@ -56,6 +56,7 @@ func serve_ball() -> void:
 	ball.up_down = -1  # always starts moving up
 	
 	ball.hud = $HUD
+	ball.brick_hit.connect($HUD.handle_score)
 	
 	# test seam hit
 	# ball.position = Vector2(500, 340)

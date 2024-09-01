@@ -4,11 +4,10 @@ Part of the 20-Game Challenge
 
 ## Up Next/The Plan
 
+* speed increase
 
 In the queue
 
-* scorekeeping
-* speed increase
 * start/end of game logic, display
 * three lives
 * high score
@@ -31,3 +30,4 @@ In the queue
 * wall collision
 * brick collision
 * brick removal
+* scorekeeping

@@ -1,5 +1,7 @@
 extends Area2D
 
+signal brick_hit
+
 @export var hud: Node
 @export var left_right: int
 @export var up_down: int
@@ -30,8 +32,9 @@ func _on_area_entered(area: Area2D) -> void:
 		left_right *= -1
 	elif other.contains("Player"):
 		up_down *= -1
-	elif area in get_tree().get_nodes_in_group("bricks") and Time.get_ticks_msec() > last_brick_hit:
+	elif Time.get_ticks_msec() > last_brick_hit and area in get_tree().get_nodes_in_group("bricks"):
 		area.queue_free()
+		brick_hit.emit()
 		up_down *= -1
 		last_brick_hit = Time.get_ticks_msec()
 	update_dir()
