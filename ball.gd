@@ -38,3 +38,7 @@ func _on_area_entered(area: Area2D) -> void:
 		up_down *= -1
 		last_brick_hit = Time.get_ticks_msec()
 	update_dir()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()

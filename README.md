@@ -4,16 +4,20 @@ Part of the 20-Game Challenge
 
 ## Up Next/The Plan
 
-* speed increase
+* three lives
+
+Bugs
+
+* 2nd seam test fails, perhaps because ball goes _into_ the brick before reversing direction?
 
 In the queue
 
 * start/end of game logic, display
-* three lives
 * high score
 * improved visuals (add colors, bevels)
 * additional styles/behaviors of bricks (e.g. extra balls)
 	* motion (gradual up/down; alternating left/right)
+* speed increase
 * better player control
 	* angle control based on location of impact
 	* ball capture/release (perhaps as temporary brick-rewarded buff)
@@ -31,3 +35,4 @@ In the queue
 * brick collision
 * brick removal
 * scorekeeping
+* ball-loss detection

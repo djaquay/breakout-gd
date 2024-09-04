@@ -60,6 +60,6 @@ func serve_ball() -> void:
 	
 	# test seam hit
 	# ball.position = Vector2(500, 340)
-	# ball.left_right = 1
+	# ball.left_right = -1
 	
 	add_child(ball)
