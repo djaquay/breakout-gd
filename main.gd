@@ -17,6 +17,7 @@ func _ready() -> void:
 	player_size = $Player/CollisionShape2D.shape.get_rect().size
 	min_x = $LeftWall.position.x + 25  # had problems with wallSize not reflecting its scale, so I punted :/
 	max_x = $RightWall.position.x - 5 - player_size.x
+	$HUD.lives = 3
 	
 	
 func brick_setup() -> void:
@@ -38,6 +39,7 @@ func _input(event):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_released("serve_ball"):
+		print("in _process/serve_ball")
 		serve_ball()
 
 
@@ -55,11 +57,19 @@ func serve_ball() -> void:
 	ball.left_right = 1 if randi_range(0, 1) > 0 else -1
 	ball.up_down = -1  # always starts moving up
 	
-	ball.hud = $HUD
 	ball.brick_hit.connect($HUD.handle_score)
+	ball.lost_life.connect(lost_life)
 	
 	# test seam hit
 	# ball.position = Vector2(500, 340)
 	# ball.left_right = -1
 	
 	add_child(ball)
+
+
+func lost_life() -> void:
+	$HUD.handle_lost_life()
+	if $HUD.lives < 1:
+		pass
+	else:
+		serve_ball()
