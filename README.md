@@ -4,7 +4,7 @@ Part of the 20-Game Challenge
 
 ## Up Next/The Plan
 
-* three lives
+* start/end of game logic, display
 
 Bugs
 
@@ -12,7 +12,6 @@ Bugs
 
 In the queue
 
-* start/end of game logic, display
 * high score
 * improved visuals (add colors, bevels)
 * additional styles/behaviors of bricks (e.g. extra balls)
@@ -36,3 +35,5 @@ In the queue
 * brick removal
 * scorekeeping
 * ball-loss detection
+* three lives
+* added 2nd lives-left display

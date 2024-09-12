@@ -21,6 +21,9 @@ func handle_score() -> void:
 	
 func update_lives() -> void:
 	$LifeLabel.text = str(lives)
+	$BallLeft1.visible = lives >= 1
+	$BallLeft2.visible = lives >= 2
+	$BallLeft3.visible = lives >= 3
 
 
 func handle_lost_life() -> void:
