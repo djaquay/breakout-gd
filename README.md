@@ -4,7 +4,7 @@ Part of the 20-Game Challenge
 
 ## Up Next/The Plan
 
-* speed increase
+* more room at the top and sides, for better bounces
 
 Bugs
 
@@ -37,3 +37,5 @@ In the queue
 * three lives
 * added 2nd lives-left display
 * start/end of game logic, display
+* speed increase
+* add new set of bricks when 1st set is cleared

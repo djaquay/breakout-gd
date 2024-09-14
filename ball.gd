@@ -7,6 +7,7 @@ signal lost_life
 @export var up_down: int
 var dir
 var last_brick_hit = 0
+var speed = 200.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +21,7 @@ func update_dir() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var vel = Vector2(200.0, 0).rotated(dir)
+	var vel = Vector2(speed, 0).rotated(dir)
 	position += vel * delta
 
 
@@ -36,6 +37,7 @@ func _on_area_entered(area: Area2D) -> void:
 		area.queue_free()
 		brick_hit.emit()
 		up_down *= -1
+		speed += 5
 		last_brick_hit = Time.get_ticks_msec()
 	update_dir()
 
