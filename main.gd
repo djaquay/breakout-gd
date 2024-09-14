@@ -21,14 +21,21 @@ func _ready() -> void:
 	
 	
 func brick_setup() -> void:
-	var size = $Brick/CollisionShape2D.shape.get_rect().size
+	clear_bricks()
+	
+	# var size = $Brick/CollisionShape2D.shape.get_rect().size
 	for row in range(0, 6):
 		for col in range(0, 8):
 			var brick = brick_scene.instantiate()
+			var size = brick.get_node("ColorRect").size
 			brick.position = Vector2(col * (size.x+1) + 50, row * (size.y+1) + 125)
 			brick.name = "Brick"
 	
 			add_child(brick)
+			
+			
+func clear_bricks() -> void:
+	get_tree().call_group("bricks", "queue_free")
 
 
 func _input(event):
@@ -38,10 +45,16 @@ func _input(event):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_just_released("serve_ball"):
-		print("in _process/serve_ball")
+	if Input.is_action_just_released("start_game") and not $HUD.in_game:
+		start_game()
+	if Input.is_action_just_released("cheat_serve") and $HUD.in_game:
 		serve_ball()
 
+func start_game() -> void:
+	brick_setup()
+	$HUD.start_game()
+	serve_ball()
+	
 
 func serve_ball() -> void:
 	var ball = ball_scene.instantiate()
@@ -69,7 +82,8 @@ func serve_ball() -> void:
 
 func lost_life() -> void:
 	$HUD.handle_lost_life()
-	if $HUD.lives < 1:
-		pass
-	else:
+	if $HUD.in_game:
+		# TODO: add a "get ready, player one" message here?  Or let HUD?
+		$ServeTimer.start()
+		await $ServeTimer.timeout
 		serve_ball()

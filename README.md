@@ -4,7 +4,7 @@ Part of the 20-Game Challenge
 
 ## Up Next/The Plan
 
-* start/end of game logic, display
+* speed increase
 
 Bugs
 
@@ -16,7 +16,6 @@ In the queue
 * improved visuals (add colors, bevels)
 * additional styles/behaviors of bricks (e.g. extra balls)
 	* motion (gradual up/down; alternating left/right)
-* speed increase
 * better player control
 	* angle control based on location of impact
 	* ball capture/release (perhaps as temporary brick-rewarded buff)
@@ -37,3 +36,4 @@ In the queue
 * ball-loss detection
 * three lives
 * added 2nd lives-left display
+* start/end of game logic, display
