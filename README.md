@@ -9,6 +9,7 @@ Part of the 20-Game Challenge
 Bugs
 
 * 2nd seam test fails, perhaps because ball goes _into_ the brick before reversing direction?
+* mouse capture (so game doesn't stop working if user moves cursor off the game window)
 
 In the queue
 
@@ -39,3 +40,7 @@ In the queue
 * speed increase
 * add new set of bricks when 1st set is cleared
 * high score
+
+## Notes
+
+High score is saved in c:/Users/.../Application\ Data/Godot/app_userdata/Breakout/high_score.ini
