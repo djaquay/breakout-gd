@@ -3,6 +3,10 @@ extends CanvasLayer
 @export var lives: int
 var score = 0
 var in_game = false
+var high_score: int = 0
+
+const HIGH_SCORE_FILE: String = "user://high_score.ini"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,6 +45,7 @@ func handle_lost_life() -> void:
 	lives -= 1
 	update_lives()
 	if lives < 1:
+		save_high_score()
 		reset_game()
 
 
@@ -50,3 +55,28 @@ func reset_game() -> void:
 	$GameOverTimer.start()
 	await $GameOverTimer.timeout
 	ready_to_start_game()
+
+
+func load_high_score() -> void:
+	if FileAccess.file_exists(HIGH_SCORE_FILE):
+		var config := ConfigFile.new()
+		config.load(HIGH_SCORE_FILE)
+
+		high_score = config.get_value("player", "high_score")
+	else:
+		high_score = -1
+		score = 0
+		save_high_score()
+		
+	$HSLabel.text = str(high_score)
+	
+	
+func save_high_score() -> void:
+	if score > high_score:
+		var config := ConfigFile.new()
+
+		config.set_value("player", "high_score", score)
+
+		config.save(HIGH_SCORE_FILE)
+		high_score = score
+		$HSLabel.text = str(high_score)

@@ -19,6 +19,7 @@ func _ready() -> void:
 	min_x = $LeftWall.position.x + 25  # had problems with wallSize not reflecting its scale, so I punted :/
 	max_x = $RightWall.position.x - 5 - player_size.x
 	$HUD.lives = 3
+	$HUD.load_high_score()
 	
 	
 func brick_setup() -> void:

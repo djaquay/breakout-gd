@@ -12,7 +12,6 @@ Bugs
 
 In the queue
 
-* high score
 * improved visuals (add colors, bevels)
 * additional styles/behaviors of bricks (e.g. extra balls)
 	* motion (gradual up/down; alternating left/right)
@@ -39,3 +38,4 @@ In the queue
 * start/end of game logic, display
 * speed increase
 * add new set of bricks when 1st set is cleared
+* high score

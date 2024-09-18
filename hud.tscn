@@ -27,6 +27,16 @@ theme_override_font_sizes/font_size = 32
 text = "Lives:"
 horizontal_alignment = 2
 
+[node name="HSText" type="Label" parent="."]
+offset_left = 450.0
+offset_top = 18.0
+offset_right = 644.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("1_ht6fj")
+theme_override_font_sizes/font_size = 32
+text = "High Score:"
+horizontal_alignment = 2
+
 [node name="StartText" type="Label" parent="."]
 visible = false
 anchors_preset = 14
@@ -66,6 +76,15 @@ theme_override_fonts/font = ExtResource("1_ht6fj")
 theme_override_font_sizes/font_size = 32
 text = "0"
 horizontal_alignment = 2
+
+[node name="HSLabel" type="Label" parent="."]
+offset_left = 653.0
+offset_top = 20.0
+offset_right = 751.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("1_ht6fj")
+theme_override_font_sizes/font_size = 32
+text = "0"
 
 [node name="BallLeft1" type="ColorRect" parent="."]
 offset_left = 210.0
